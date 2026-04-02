@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef(null);
   
   useGSAP(() => {
     // Parallax effect on hero image

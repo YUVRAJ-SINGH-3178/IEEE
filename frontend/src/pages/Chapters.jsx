@@ -7,10 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Chapters() {
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef(null);
 
   useGSAP(() => {
-    const panels = gsap.utils.toArray('.chapter-panel') as HTMLElement[];
+    const panels = gsap.utils.toArray('.chapter-panel');
     panels.forEach((panel) => {
       ScrollTrigger.create({
         trigger: panel,

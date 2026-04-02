@@ -7,11 +7,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Intro() {
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef(null);
   
   useGSAP(() => {
     // Stacking/pinning effect
-    const panels = gsap.utils.toArray('.panel') as HTMLElement[];
+    const panels = gsap.utils.toArray('.panel');
     
     panels.forEach((panel) => {
       ScrollTrigger.create({

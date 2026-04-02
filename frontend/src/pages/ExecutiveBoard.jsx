@@ -7,10 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ExecutiveBoard() {
-  const container = useRef<HTMLDivElement>(null);
+  const container = useRef(null);
 
   useGSAP(() => {
-    const panels = gsap.utils.toArray('.exec-panel') as HTMLElement[];
+    const panels = gsap.utils.toArray('.exec-panel');
     panels.forEach((panel) => {
       ScrollTrigger.create({
         trigger: panel,
