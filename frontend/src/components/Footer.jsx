@@ -27,7 +27,6 @@ export default function Footer() {
              </div>
              <div className="flex flex-col gap-4">
                 <span className="text-ieee-cyan font-bold tracking-widest uppercase text-sm mb-2">Connect</span>
-                <Link to="/events" className="text-ieee-light/70 hover:text-white transition-colors">Seminars & Speakers</Link>
                 <a href="https://www.ieee.org/" target="_blank" rel="noopener noreferrer" className="text-ieee-light/70 hover:text-white transition-colors">Become a Member</a>
              </div>
 

@@ -53,10 +53,10 @@ function App() {
               <Route path="/executive-board" element={<ExecutiveBoard />} />
               <Route path="/chapters" element={<Chapters />} />
               <Route path="/achievements" element={<Achievements />} />
-              <Route path="/events" element={<Events />} />
               <Route path="/join" element={<Join />} />
               
               {/* Temporary removal for Phase 1 
+              <Route path="/events" element={<Events />} />
               <Route path="/blog" element={<BlogList />} />
               <Route path="/blog/:id" element={<BlogDetail />} />
               <Route path="/gallery" element={<Gallery />} />

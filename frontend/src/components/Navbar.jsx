@@ -11,7 +11,7 @@ export default function Navbar() {
     { name: 'About', path: '/about' },
     { name: 'Board', path: '/executive-board' },
     { name: 'Chapters', path: '/chapters' },
-    { name: 'Events', path: '/events' },
+    { name: 'Achievements', path: '/achievements' },
   ];
 
   return (
