@@ -1,6 +1,6 @@
 # IEEE Student Branch – SRM University AP
 
-The official flagship portal for the IEEE Student Branch at SRM University AP. This project is a highly stylized, production-ready frontend web application designed to showcase the branch's executive board, technical chapters, and events, built with modern web technologies that emphasize smooth animations and immersive user experience.
+The official portal for the IEEE Student Branch at SRM University AP. This project is a highly stylized, production-ready frontend web application designed to showcase the branch's executive board, technical chapters, and events, built with modern web technologies that emphasize smooth animations and immersive user experience.
 
 ## 🛠 Tech Stack & Core Libraries
 

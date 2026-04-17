@@ -15,7 +15,7 @@ export default function AboutLayout() {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       exit={{ opacity: 0 }}
-      className="min-h-screen pt-32 px-8 md:px-16 bg-ieee-light text-ieee-deep"
+      className="min-h-screen pt-32 px-8 md:px-16 bg-ieee-slate text-ieee-deep"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 static md:relative">
          {/* Mobile Navigation */}

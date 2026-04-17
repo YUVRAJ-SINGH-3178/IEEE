@@ -15,52 +15,48 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   const navLinks = [
     { name: 'About', path: '/about' },
     { name: 'Board', path: '/executive-board' },
     { name: 'Chapters', path: '/chapters' },
     { name: 'Achievements', path: '/achievements' },
-    { name: 'Events', path: '/events' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Blog', path: '/blog' },
   ];
 
   return (
     <>
-      <motion.nav 
+      <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, delay: 0.5, ease: [0.76, 0, 0.24, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 transition-all duration-500 ${
-          (isScrolled || location.pathname !== '/') 
-            ? 'bg-ieee-deep/95 backdrop-blur-md shadow-lg py-3' 
-            : 'bg-transparent py-6'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 transition-all duration-500 ${(isScrolled || location.pathname !== '/')
+          ? 'bg-ieee-deep/95 backdrop-blur-md shadow-lg py-3'
+          : 'bg-transparent py-6'
+          }`}
       >
         <div className="relative z-50 flex items-center gap-4">
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-4 group">
-             <img 
-               src="/ieee-horizontal-logo.png" 
-               alt="IEEE SRM AP Logo" 
-               className="h-8 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
-             />
+            <img
+              src="/ieee-horizontal-logo.png"
+              alt="IEEE SRM AP Logo"
+              className="h-8 md:h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+            />
           </Link>
         </div>
-        
+
         {/* Desktop Menu */}
         <div className={`hidden lg:flex items-center gap-8 xl:gap-12 text-[10px] xl:text-xs font-sans uppercase tracking-[0.2em] font-bold transition-colors duration-300 text-white`}>
           <div className="flex gap-6 xl:gap-8 items-center">
             {navLinks.map((link) => {
               return (
-                <Link 
-                  key={link.path} 
+                <Link
+                  key={link.path}
                   to={link.path}
                   className="relative group py-1"
                 >
                   <span className="relative z-10">{link.name}</span>
                   {location.pathname === link.path && (
-                    <motion.div 
+                    <motion.div
                       layoutId="nav-indicator"
                       className="absolute bottom-0 left-0 right-0 h-[2px] bg-ieee-cyan"
                     />
@@ -70,8 +66,8 @@ export default function Navbar() {
               );
             })}
           </div>
-          
-          <a 
+
+          <a
             href="https://www.ieee.org/"
             target="_blank"
             rel="noopener noreferrer"
@@ -82,18 +78,18 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle Button */}
-        <button 
+        <button
           className={`lg:hidden relative z-50 transition-colors duration-300 text-white`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </motion.nav>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
@@ -109,26 +105,25 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + (i * 0.05), duration: 0.5 }}
                   >
-                    <Link 
+                    <Link
                       to={link.path}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-3xl font-display font-medium block py-2 transition-colors duration-300 ${
-                        location.pathname === link.path ? 'text-ieee-cyan' : 'hover:text-ieee-cyan'
-                      }`}
+                      className={`text-3xl font-display font-medium block py-2 transition-colors duration-300 ${location.pathname === link.path ? 'text-ieee-cyan' : 'hover:text-ieee-cyan'
+                        }`}
                     >
                       {link.name}
                     </Link>
                   </motion.div>
                 );
               })}
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + (navLinks.length * 0.05), duration: 0.5 }}
                 className="mt-8"
               >
-                <a 
+                <a
                   href="https://www.ieee.org/"
                   target="_blank"
                   rel="noopener noreferrer"

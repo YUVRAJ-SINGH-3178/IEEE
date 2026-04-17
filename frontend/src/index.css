@@ -37,3 +37,45 @@ html.lenis, html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+/* ═══════════════════════════════════════════════
+   HOMEPAGE — LIGHTWEIGHT ANIMATIONS
+   ═══════════════════════════════════════════════ */
+
+/* Infinite Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* 3D tilt card */
+.tilt-card {
+  transform-style: preserve-3d;
+}
+
+/* Bento grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+.bento-grid .bento-wide {
+  grid-column: span 2;
+}
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .bento-grid .bento-wide {
+    grid-column: span 2;
+  }
+}
